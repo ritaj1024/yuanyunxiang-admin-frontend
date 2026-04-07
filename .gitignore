@@ -5,6 +5,7 @@ dist/
 .playwright-mcp/
 .claude/
 .codex
+.git_ssh_command.sh
 *.log
 findings.md
 progress.md
