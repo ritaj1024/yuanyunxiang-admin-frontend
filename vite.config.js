@@ -2,8 +2,11 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
 
-export default defineConfig({
-  base: '/admin/',
+const repoBase = '/yuanyunxiang-admin-frontend/';
+
+export default defineConfig(({ command }) => ({
+  // Keep the current local dev URL while building for the GitHub Pages repo path.
+  base: command === 'serve' ? '/admin/' : repoBase,
   cacheDir: '.vite-cache',
   plugins: [vue()],
   resolve: {
@@ -16,4 +19,4 @@ export default defineConfig({
     port: 8092,
     open: false
   }
-});
+}));

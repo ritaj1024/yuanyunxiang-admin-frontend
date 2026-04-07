@@ -19,3 +19,9 @@
 - 当前为前端 demo 工程，页面数据为本地 mock。
 - 菜单、路由、页面类型、功能覆盖按需求文档拆分完成。
 - `功能覆盖矩阵.txt` 用于核对 PDF 功能点落位。
+
+GitHub Pages
+- 仓库已配置 GitHub Pages 自动部署工作流：推送到 `main` 后会自动构建并发布。
+- 预期访问地址：`https://ritaj1024.github.io/yuanyunxiang-admin-frontend/`
+- 为适配 GitHub Pages，生产环境路由使用 `hash` 模式，因此分享链接会带 `#/`。
+- 首次启用时，请到 GitHub 仓库 `Settings -> Pages`，将 `Source` 设为 `GitHub Actions`。

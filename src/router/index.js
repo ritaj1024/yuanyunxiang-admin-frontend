@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import { isLoggedIn } from '@/composables/useAuth';
 import { allPages } from '@/data/modules';
 
@@ -36,7 +36,8 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory('/admin'),
+  // GitHub Pages serves static files only; hash history avoids 404s on refresh/share links.
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior() {
     return { top: 0 };
