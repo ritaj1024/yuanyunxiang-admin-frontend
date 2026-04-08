@@ -1,7 +1,9 @@
 import { reactive } from 'vue';
 
+const SIDEBAR_STATUS_KEY = 'yyx-admin-sidebar-status';
+
 const state = reactive({
-  sidebarCollapsed: false,
+  sidebarCollapsed: localStorage.getItem(SIDEBAR_STATUS_KEY) === '0',
   visitedTags: [
     {
       path: '/index',
@@ -14,6 +16,7 @@ const state = reactive({
 export function useUiState() {
   function toggleSidebar() {
     state.sidebarCollapsed = !state.sidebarCollapsed;
+    localStorage.setItem(SIDEBAR_STATUS_KEY, state.sidebarCollapsed ? '0' : '1');
   }
 
   function addVisitedTag(tag) {
